@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zynex | سرور CS2</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+<title>Zynex | سرور حرفه‌ای CS2</title>
+<meta name="description" content="سرور حرفه‌ای CS2 Zynex - پینگ پایین، آنتی‌چیت قوی، ایونت‌های هفتگی">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  
+
   :root {
     --red: #ff0033;
     --red-dark: #8b0016;
@@ -15,6 +16,7 @@
     --bg: #0a0a0a;
     --bg-2: #121212;
     --card: #161616;
+    --text-dim: #999;
   }
 
   html { scroll-behavior: smooth; }
@@ -24,32 +26,34 @@
     background: var(--bg);
     color: #eee;
     overflow-x: hidden;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
-  /* ===== Animated Background ===== */
+  /* ===== Background ===== */
   .bg-grid {
     position: fixed;
     inset: 0;
-    background-image: 
-      linear-gradient(rgba(255,0,51,0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,0,51,0.07) 1px, transparent 1px);
-    background-size: 50px 50px;
+    background-image:
+      linear-gradient(rgba(255,0,51,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,0,51,0.06) 1px, transparent 1px);
+    background-size: 55px 55px;
     z-index: -2;
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 25s linear infinite;
   }
   @keyframes gridMove {
     from { background-position: 0 0; }
-    to { background-position: 50px 50px; }
+    to { background-position: 55px 55px; }
   }
   .bg-glow {
     position: fixed;
     top: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle at 30% 20%, rgba(255,0,51,0.15), transparent 40%),
-                radial-gradient(circle at 70% 80%, rgba(139,0,22,0.2), transparent 45%);
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,0,51,0.15), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(139,0,22,0.2), transparent 45%);
     z-index: -1;
     animation: pulse 8s ease-in-out infinite;
+    pointer-events: none;
   }
   @keyframes pulse {
     0%,100% { opacity: 0.6; transform: scale(1); }
@@ -65,25 +69,27 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px 6%;
-    background: rgba(10,10,10,0.75);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,0,51,0.25);
+    background: rgba(10,10,10,0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,0,51,0.2);
     transition: 0.3s;
   }
   .logo {
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
-    font-size: 28px;
+    font-size: 26px;
     letter-spacing: 3px;
     color: #fff;
-    text-shadow: 0 0 10px var(--red), 0 0 30px var(--red);
+    text-shadow: 0 0 12px var(--red), 0 0 35px var(--red);
     cursor: pointer;
+    user-select: none;
   }
   .logo span { color: var(--red); }
   nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 32px;
   }
   nav a {
     color: #ccc;
@@ -91,6 +97,7 @@
     font-weight: 500;
     transition: 0.3s;
     position: relative;
+    font-size: 15px;
   }
   nav a:hover { color: var(--red); }
   nav a::after {
@@ -112,80 +119,93 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px 60px;
+    padding: 120px 20px 80px;
     position: relative;
   }
   .hero h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(60px, 12vw, 160px);
+    font-size: clamp(60px, 13vw, 170px);
     font-weight: 900;
-    letter-spacing: 8px;
-    background: linear-gradient(180deg, #fff 0%, var(--red) 60%, var(--red-dark) 100%);
+    letter-spacing: 10px;
+    background: linear-gradient(180deg, #fff 0%, var(--red) 55%, var(--red-dark) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 40px rgba(255,0,51,0.7));
+    filter: drop-shadow(0 0 45px rgba(255,0,51,0.7));
     animation: flicker 4s infinite;
+    margin-bottom: 10px;
   }
   @keyframes flicker {
     0%,18%,22%,25%,53%,57%,100% { opacity: 1; }
-    20%,24%,55% { opacity: 0.7; }
+    20%,24%,55% { opacity: 0.75; }
   }
   .hero .sub {
-    font-size: clamp(16px, 2.5vw, 24px);
+    font-size: clamp(16px, 2.5vw, 22px);
     color: #bbb;
-    margin-top: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
   }
   .hero .ip-box {
-    margin-top: 40px;
-    display: flex;
+    margin-top: 35px;
+    display: inline-flex;
     align-items: center;
     gap: 12px;
     padding: 18px 32px;
     background: rgba(22,22,22,0.9);
     border: 2px solid var(--red);
-    border-radius: 12px;
-    box-shadow: 0 0 30px rgba(255,0,51,0.5), inset 0 0 20px rgba(255,0,51,0.1);
+    border-radius: 14px;
+    box-shadow: 0 0 35px rgba(255,0,51,0.5), inset 0 0 20px rgba(255,0,51,0.1);
     cursor: pointer;
     transition: 0.3s;
-    font-size: clamp(16px, 2.5vw, 22px);
+    font-size: clamp(15px, 2.3vw, 20px);
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     color: #fff;
     animation: boxPulse 2.5s infinite;
+    user-select: none;
   }
   @keyframes boxPulse {
-    0%,100% { box-shadow: 0 0 30px rgba(255,0,51,0.5), inset 0 0 20px rgba(255,0,51,0.1); }
-    50% { box-shadow: 0 0 50px rgba(255,0,51,0.9), inset 0 0 30px rgba(255,0,51,0.25); }
+    0%,100% { box-shadow: 0 0 35px rgba(255,0,51,0.5), inset 0 0 20px rgba(255,0,51,0.1); }
+    50% { box-shadow: 0 0 55px rgba(255,0,51,0.9), inset 0 0 30px rgba(255,0,51,0.25); }
   }
   .hero .ip-box:hover {
     transform: translateY(-3px) scale(1.03);
     background: rgba(255,0,51,0.15);
   }
   .hero .ip-box .copy {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--red);
     font-family: 'Vazirmatn';
+    font-weight: 700;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 16px 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 38px;
     background: linear-gradient(135deg, var(--red), var(--red-dark));
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 17px;
-    border-radius: 8px;
+    font-size: 16px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     transition: 0.3s;
     box-shadow: 0 8px 25px rgba(255,0,51,0.45);
     position: relative;
     overflow: hidden;
+    font-family: 'Vazirmatn';
   }
   .btn::before {
     content:'';
@@ -198,25 +218,36 @@
   .btn:hover::before { left: 100%; }
   .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(255,0,51,0.7);
+    box-shadow: 0 12px 40px rgba(255,0,51,0.75);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--red);
+    box-shadow: none;
+  }
+  .btn-outline:hover {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(255,0,51,0.6);
   }
 
   /* ===== Sections ===== */
-  section { padding: 90px 8%; position: relative; }
+  section { padding: 100px 6%; position: relative; }
   .section-title {
-    font-family: 'Orbitron', sans-serif;
     font-size: clamp(28px, 5vw, 46px);
     font-weight: 900;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #fff;
-    letter-spacing: 3px;
-    text-shadow: 0 0 20px rgba(255,0,51,0.6);
+    letter-spacing: 1px;
+    text-shadow: 0 0 25px rgba(255,0,51,0.5);
   }
   .section-title span { color: var(--red); }
   .section-sub {
     text-align: center;
-    color: #888;
+    color: var(--text-dim);
     margin-bottom: 60px;
     font-size: 16px;
   }
@@ -232,11 +263,13 @@
   .feature {
     background: linear-gradient(145deg, #151515, #0d0d0d);
     border: 1px solid rgba(255,0,51,0.25);
-    border-radius: 14px;
-    padding: 32px 26px;
+    border-radius: 16px;
+    padding: 34px 28px;
     transition: 0.4s;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(40px);
   }
   .feature::before {
     content:'';
@@ -252,89 +285,219 @@
   .feature:hover {
     transform: translateY(-8px);
     border-color: var(--red);
-    box-shadow: 0 20px 40px rgba(255,0,51,0.25);
+    box-shadow: 0 20px 45px rgba(255,0,51,0.25);
   }
   .feature .icon {
-    font-size: 42px;
+    font-size: 44px;
     margin-bottom: 18px;
-    filter: drop-shadow(0 0 12px var(--red));
+    filter: drop-shadow(0 0 14px var(--red));
   }
   .feature h3 {
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #fff;
+    font-weight: 700;
   }
-  .feature p { color: #999; font-size: 15px; }
+  .feature p { color: var(--text-dim); font-size: 15px; line-height: 1.8; }
 
-  /* ===== Server Stats ===== */
+  /* ===== Stats ===== */
   .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
     max-width: 1000px;
     margin: 0 auto;
   }
   .stat {
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 20px;
     background: rgba(22,22,22,0.7);
-    border-radius: 12px;
+    border-radius: 14px;
     border: 1px solid rgba(255,0,51,0.2);
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .stat:hover {
+    border-color: var(--red);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255,0,51,0.25);
   }
   .stat .num {
     font-family: 'Orbitron', sans-serif;
-    font-size: 44px;
+    font-size: 46px;
     font-weight: 900;
     color: var(--red);
-    text-shadow: 0 0 20px rgba(255,0,51,0.8);
+    text-shadow: 0 0 25px rgba(255,0,51,0.8);
+    line-height: 1.2;
   }
-  .stat .label { color: #aaa; margin-top: 8px; font-size: 15px; }
+  .stat .label { color: #aaa; margin-top: 10px; font-size: 15px; }
 
   /* ===== Rules ===== */
-  .rules {
+  .rules-box {
     max-width: 900px;
     margin: 0 auto;
     background: linear-gradient(145deg, #141414, #0b0b0b);
     border: 1px solid rgba(255,0,51,0.3);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 40px;
+    opacity: 0;
+    transform: translateY(40px);
   }
-  .rules li {
-    list-style: none;
-    padding: 14px 0;
+  .rules-box ul { list-style: none; }
+  .rules-box li {
+    padding: 15px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     display: flex;
     gap: 14px;
     color: #ccc;
+    font-size: 15px;
   }
-  .rules li:last-child { border: none; }
-  .rules li::before {
+  .rules-box li:last-child { border: none; }
+  .rules-box li::before {
     content: '⚔';
     color: var(--red);
     font-size: 18px;
-    filter: drop-shadow(0 0 6px var(--red));
+    filter: drop-shadow(0 0 8px var(--red));
+    flex-shrink: 0;
   }
 
-  /* ===== CTA ===== */
+  /* ===== Download Section ===== */
+  .download-section {
+    text-align: center;
+    padding: 100px 6%;
+    background: radial-gradient(ellipse at center, rgba(255,0,51,0.15), transparent 70%);
+    position: relative;
+  }
+  .download-title {
+    font-size: clamp(30px, 6vw, 55px);
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 0 35px rgba(255,0,51,0.7);
+  }
+  .download-title span { color: var(--red); }
+  .download-sub {
+    color: var(--text-dim);
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+  .download-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, #151515, #0d0d0d);
+    border: 2px solid var(--red);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 0 60px rgba(255,0,51,0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .download-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,0,51,0.15), transparent);
+    animation: shine 3s infinite;
+  }
+  @keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  .download-box .os-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 20px var(--red));
+  }
+  .download-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .download-box p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 44px;
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 10px 35px rgba(255,0,51,0.5);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Vazirmatn';
+    width: 100%;
+    max-width: 340px;
+    animation: btnGlow 2s infinite;
+  }
+  @keyframes btnGlow {
+    0%,100% { box-shadow: 0 10px 35px rgba(255,0,51,0.5); }
+    50% { box-shadow: 0 10px 50px rgba(255,0,51,0.9); }
+  }
+  .download-btn::before {
+    content:'';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.6s;
+  }
+  .download-btn:hover::before { left: 100%; }
+  .download-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    animation: none;
+    box-shadow: 0 15px 50px rgba(255,0,51,0.9);
+  }
+  .download-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #777;
+  }
+  .download-info span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .download-info span::before {
+    content: '●';
+    color: var(--red);
+  }
+
+  /* ===== CTA سرور ===== */
   .cta {
     text-align: center;
-    padding: 100px 8%;
-    background: radial-gradient(ellipse at center, rgba(255,0,51,0.15), transparent 70%);
+    padding: 100px 6%;
   }
   .cta h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(30px, 6vw, 60px);
+    font-size: clamp(28px, 5vw, 50px);
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     color: #fff;
-    text-shadow: 0 0 30px rgba(255,0,51,0.8);
+    text-shadow: 0 0 30px rgba(255,0,51,0.7);
   }
-  .cta p { color: #aaa; margin-bottom: 30px; font-size: 18px; }
+  .cta h2 span { color: var(--red); }
+  .cta p { color: var(--text-dim); margin-bottom: 30px; font-size: 17px; }
 
   /* ===== Footer ===== */
   footer {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px 35px;
     border-top: 1px solid rgba(255,0,51,0.25);
     background: #0a0a0a;
     color: #777;
@@ -342,11 +505,11 @@
   footer .socials {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 16px;
+    margin-bottom: 25px;
   }
   footer .socials a {
-    width: 46px; height: 46px;
+    width: 48px; height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -361,27 +524,28 @@
   footer .socials a:hover {
     background: var(--red);
     color: #fff;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(255,0,51,0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255,0,51,0.6);
   }
   footer .copy { font-size: 14px; color: #666; }
-  footer .copy span { color: var(--red); }
+  footer .copy span { color: var(--red); font-weight: 700; }
 
   /* ===== Toast ===== */
   .toast {
     position: fixed;
     bottom: 30px;
     left: 50%;
-    transform: translateX(-50%) translateY(100px);
+    transform: translateX(-50%) translateY(120px);
     background: var(--red);
     color: #fff;
-    padding: 14px 28px;
-    border-radius: 8px;
+    padding: 14px 30px;
+    border-radius: 10px;
     font-weight: 700;
-    box-shadow: 0 10px 30px rgba(255,0,51,0.6);
+    box-shadow: 0 12px 35px rgba(255,0,51,0.6);
     opacity: 0;
     transition: 0.4s;
     z-index: 999;
+    font-size: 15px;
   }
   .toast.show {
     transform: translateX(-50%) translateY(0);
@@ -391,7 +555,19 @@
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
     nav ul { display: none; }
-    .rules { padding: 25px; }
+    nav { padding: 15px 5%; }
+    .logo { font-size: 22px; }
+    .rules-box { padding: 25px; }
+    .download-box { padding: 30px 22px; }
+    .hero .ip-box { padding: 14px 22px; font-size: 14px; }
+    section { padding: 70px 5%; }
+    .hero { padding: 100px 20px 60px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero .ip-box .ip-text { font-size: 12px; }
+    .btn { padding: 14px 28px; font-size: 14px; }
+    .download-btn { padding: 16px 30px; font-size: 15px; }
   }
 </style>
 </head>
@@ -400,31 +576,34 @@
 <div class="bg-grid"></div>
 <div class="bg-glow"></div>
 
-<!-- Navbar -->
+<!-- ===== Navbar ===== -->
 <nav>
   <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">ZYNE<span>X</span></div>
   <ul>
     <li><a href="#home">خانه</a></li>
     <li><a href="#features">امکانات</a></li>
     <li><a href="#rules">قوانین</a></li>
-    <li><a href="#join">اتصال</a></li>
+    <li><a href="#download">دانلود</a></li>
   </ul>
 </nav>
 
-<!-- Hero -->
+<!-- ===== Hero ===== -->
 <section class="hero" id="home">
   <h1>ZYNE<span style="color:var(--red); -webkit-text-fill-color:var(--red);">X</span></h1>
   <p class="sub">🔥 سرور حرفه‌ای CS2 با بهترین کیفیت 🔥</p>
-  
+
   <div class="ip-box" onclick="copyIP()">
-    <span>connect zynex.ir:27015</span>
+    <span>5.57.37.120:27015</span>
     <span class="copy">📋 کپی</span>
   </div>
 
-  <a href="#join" class="btn">🚀 شروع بازی</a>
+  <div class="hero-buttons">
+    <a href="#download" class="btn">⬇️ دانلود لانچر</a>
+    <a href="#features" class="btn btn-outline">✨ امکانات</a>
+  </div>
 </section>
 
-<!-- Features -->
+<!-- ===== Features ===== -->
 <section id="features">
   <h2 class="section-title">امکانات <span>سرور</span></h2>
   <p class="section-sub">هرچی برای یه تجربه عالی لازم داری</p>
@@ -442,7 +621,7 @@
     <div class="feature">
       <div class="icon">🎯</div>
       <h3>مود‌های متنوع</h3>
-      <p>Competitive, Retake, AWP, 1v1 و کلی مود جذاب دیگه</p>
+      <p>Competitive، Retake، AWP، 1v1 و کلی مود جذاب دیگه</p>
     </div>
     <div class="feature">
       <div class="icon">👑</div>
@@ -456,63 +635,86 @@
     </div>
     <div class="feature">
       <div class="icon">🎁</div>
-      <h3>رویداد‌های هفتگی</h3>
+      <h3>رویدادهای هفتگی</h3>
       <p>مسابقات و ایونت‌های هفتگی با جوایز واقعی و ارزشمند</p>
     </div>
   </div>
 </section>
 
-<!-- Stats -->
+<!-- ===== Stats ===== -->
 <section id="stats">
-  <h2 class="section-title">آمار <span>زنده</span></h2>
-  <p class="section-sub">سرور ما در یک نگاه</p>
+  <h2 class="section-title">آمار <span>سرور</span></h2>
+  <p class="section-sub">Zynex در یک نگاه</p>
   <div class="stats">
-    <div class="stat">
-      <div class="num" id="players">128</div>
-      <div class="label">بازیکن آنلاین</div>
-    </div>
     <div class="stat">
       <div class="num">24/7</div>
       <div class="label">آپ‌تایم سرور</div>
     </div>
     <div class="stat">
-      <div class="num">12ms</div>
+      <div class="num">&lt;20ms</div>
       <div class="label">میانگین پینگ</div>
     </div>
     <div class="stat">
       <div class="num">50K+</div>
       <div class="label">بازیکن ثبت‌شده</div>
     </div>
+    <div class="stat">
+      <div class="num">99.9%</div>
+      <div class="label">پایداری</div>
+    </div>
   </div>
 </section>
 
-<!-- Rules -->
+<!-- ===== Rules ===== -->
 <section id="rules">
   <h2 class="section-title">قوانین <span>سرور</span></h2>
   <p class="section-sub">رعایت قوانین = بازی بهتر برای همه</p>
-  <ul class="rules">
-    <li>استفاده از هرگونه چیت، اسکریپت یا برنامه غیرمجاز = بن دائمی</li>
-    <li>توهین، فحاشی و رفتار نامناسب با دیگران ممنوع است</li>
-    <li>اسپم کردن در چت یا ویس باعث بن موقت می‌شود</li>
-    <li>تبدیل تیم (Team Kill) عمدی جریمه دارد</li>
-    <li>تبلیغ سرور‌های دیگر ممنوع می‌باشد</li>
-    <li>احترام به ادمین‌ها و رعایت دستورات آن‌ها الزامی است</li>
-  </ul>
+  <div class="rules-box">
+    <ul>
+      <li>استفاده از هرگونه چیت، اسکریپت یا برنامه غیرمجاز = بن دائمی</li>
+      <li>توهین، فحاشی و رفتار نامناسب با دیگران ممنوع است</li>
+      <li>اسپم کردن در چت یا ویس باعث بن موقت می‌شود</li>
+      <li>کشتن تیمی (Team Kill) عمدی جریمه دارد</li>
+      <li>تبلیغ سرورهای دیگر ممنوع می‌باشد</li>
+      <li>احترام به ادمین‌ها و رعایت دستورات آن‌ها الزامی است</li>
+    </ul>
+  </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="join">
-  <h2>آماده‌ای بترکونی؟ 💥</h2>
+<!-- ===== Download ===== -->
+<section class="download-section" id="download">
+  <h2 class="download-title">دانلود <span>لانچر</span></h2>
+  <p class="download-sub">🚀 برای راحتی شما، لانچر اختصاصی Zynex</p>
+
+  <div class="download-box">
+    <div class="os-icon">🖥️</div>
+    <h3>Zynex Launcher</h3>
+    <p>نسخه ویندوز • v1.0.0</p>
+
+    <a href="https://cdn.imgurl.ir/uploads/79695_ZynexLauncherWindows.zip" class="download-btn" download>
+      ⬇️ دانلود برای ویندوز
+    </a>
+
+    <div class="download-info">
+      <span>رایگان</span>
+      <span>بدون ویروس</span>
+      <span>ویندوز 10+</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA سرور ===== -->
+<section class="cta">
+  <h2>آماده‌ای <span>بترکونی؟</span> 💥</h2>
   <p>همین حالا به Zynex بپیوند و حرفه‌ای بازی کن</p>
+
   <div class="ip-box" onclick="copyIP()" style="margin: 30px auto 0; display:inline-flex;">
-    <span>connect zynex.ir:27015</span>
+    <span>5.57.37.120:27015</span>
     <span class="copy">📋 کپی</span>
   </div>
-  <br>
-  <a href="#" class="btn" style="margin-top:30px;">🎮 اتصال به سرور</a>
 </section>
 
-<!-- Footer -->
+<!-- ===== Footer ===== -->
 <footer>
   <div class="socials">
     <a href="#" title="Discord">💬</a>
@@ -526,9 +728,9 @@
 <div class="toast" id="toast">✅ آی‌پی کپی شد!</div>
 
 <script>
-  // Copy IP
+  // ===== کپی آی‌پی =====
   function copyIP() {
-    const ip = 'connect zynex.ir:27015';
+    const ip = '5.57.37.120:27015';
     navigator.clipboard.writeText(ip).then(() => {
       const t = document.getElementById('toast');
       t.classList.add('show');
@@ -536,16 +738,7 @@
     });
   }
 
-  // Animated counter for players
-  let players = 128;
-  setInterval(() => {
-    players += Math.floor(Math.random() * 7) - 3;
-    if (players < 90) players = 90;
-    if (players > 180) players = 180;
-    document.getElementById('players').textContent = players;
-  }, 3000);
-
-  // Navbar scroll effect
+  // ===== Navbar Scroll =====
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
@@ -553,24 +746,25 @@
       nav.style.background = 'rgba(10,10,10,0.95)';
     } else {
       nav.style.padding = '18px 6%';
-      nav.style.background = 'rgba(10,10,10,0.75)';
+      nav.style.background = 'rgba(10,10,10,0.7)';
     }
   });
 
-  // Reveal on scroll
+  // ===== Reveal on Scroll =====
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
+        setTimeout(() => {
+          entry.target.style.transition = '0.7s ease';
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }, i * 80);
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.feature, .stat, .rules').forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(40px)';
-    el.style.transition = '0.7s ease';
+  document.querySelectorAll('.feature, .stat, .rules-box').forEach(el => {
     observer.observe(el);
   });
 </script>
